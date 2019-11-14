@@ -151,7 +151,7 @@ public:
 			               data->fn();
 			               uv_timer_stop(handleInner);
 			               delete data;
-			               delete handleInner;
+			               uv_close_free(handleInner);
 		               },
 		               timeoutMs, 0);
 	}
